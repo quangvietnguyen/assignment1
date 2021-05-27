@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaccine List</title>
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <img src="images/" alt="Background images"/>
+        <script>
+            let date = new Date();
+            date = date.toDateString();
+            $(document).ready(() => {
+                $("#date").html(date);
+            })
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>COVID-19 Vaccine Booking System</h1>
+            <h4>Assignment #1 / Quang Viet Nguyen / 991590517</h4>
+        </header>
+        <section>
+            <div>
+                <a href="../index.html">Main Page</a>
+                <a href="booking.html">Vaccine Booking</a>
+            </div>
+        </section>
+        <footer>
+            <h5>nguyen374 / Davis Campus / <span id="date"></span></h4>
+        </footer>
+    </body>
+</html>
