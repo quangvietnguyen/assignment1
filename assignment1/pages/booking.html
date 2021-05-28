@@ -10,6 +10,9 @@
             date = date.toDateString();
             $(document).ready(() => {
                 $("#date").html(date);
+                $("#back").click( () => {
+                    
+                })
             })
         </script>
     </head>
@@ -22,6 +25,27 @@
             <div>
                 <a href="../index.html">Main Page</a>
                 <a href="list.html">Vaccine List</a>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h2>Vaccine Booking</h2>
+            </div>
+            <div>
+                <form>
+                    <label for="bookingdate">Date:
+                    <input type="date" id="bookingdate" name="bookingdate" required/></label><br>
+                    <label for="time">Time:
+                    <input type="time" id="time" name="time" required/></label><br>
+                    <label for="ohip">OHIP Number:
+                    <input type="number" id="ohip" name="ohip" required/></label><br>
+                    <label for="email">Email:
+                    <input type="email" id="email" name="email"/></label><br>
+                    <label for="phone">Phone Number:
+                    <input type="number" id="phone" name="phone" required/></label><br>
+                    <button>Submit</button><br>
+                    <button id="back">Back</button>
+                </form>
             </div>
         </section>
         <footer>
