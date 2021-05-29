@@ -4,6 +4,15 @@ html {
     background-repeat: repeat;
 }
 
+.grid-container {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-areas:    'header header header header'
+                            'menu menu menu menu'
+                            'main main main main'
+                            'footer footer footer footer';
+}
+
 #wrapper {
     align-items: center;
     text-align: center;
@@ -13,21 +22,40 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    position: relative;
-    padding: 15px 15px 5px 15px;
-    margin: auto;
-    background-color: orange;
-}
-footer {
-    position: relative;
+.grid-header {
+    grid-area: header;
     padding: 15px 15px 15px 15px;
-    bottom: 0;
     background-color: orange;
+    margin: 1px;
+}
+
+#navigator {
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: lightcoral;
+    padding: 10px;
+    margin: 1px;
+}
+
+#navigator a {
+    border: solid 0.1px;
+    background-color: lightsalmon;
+}
+
+.grid-main {
+    grid-area: main;
+}
+
+.grid-footer {
+    grid-area: footer;
+    padding: 15px 15px 15px 15px;
+    background-color: orange;
+    margin: 1px;
 }
 
 body {
-    position: relative;
     background-color: rgba(255, 255, 255, 0.8);
     height: auto;
 }
@@ -52,20 +80,6 @@ span {
     align-self: center;
     padding: auto;
     margin: auto;
-}
-
-#navigator {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: lightcoral;
-    padding: 10px;
-    margin: 10px;
-}
-
-#navigator a {
-    border: solid 0.1px;
-    background-color: lightsalmon;
 }
 
 #return {
