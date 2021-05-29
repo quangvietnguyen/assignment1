@@ -2,26 +2,56 @@
 <html>
     <head>
         <title>Vaccine List</title>
+        <link rel="stylesheet" href="../css/styles.css"/>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
-        <img src="images/" alt="Background images"/>
         <script>
             let date = new Date();
             date = date.toDateString();
             $(document).ready(() => {
                 $("#date").html(date);
+                $("#bookingdate").html(localStorage.getItem("Date"));
+                $("#time").html(localStorage.getItem("Time"));
+                $("#ohip").html(localStorage.getItem("OHIP"));
+                $("#email").html(localStorage.getItem("Email"));
+                $("#phone").html(localStorage.getItem("Phone"));
             })
         </script>
     </head>
-    <body>
+    <body id="wrapper">
         <header>
             <h1>COVID-19 Vaccine Booking System</h1>
             <h4>Assignment #1 / Quang Viet Nguyen / 991590517</h4>
         </header>
         <section>
-            <div>
+            <div id="navigator">
                 <a href="../index.html">Main Page</a>
                 <a href="booking.html">Vaccine Booking</a>
+            </div>
+            <div>
+                <table>
+                    <tr>Information</tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td id="bookingdate"></td>
+                    </tr>
+                    <tr>
+                        <td>Time:</td>
+                        <td id="time"></td>
+                    </tr>
+                    <tr>
+                        <td>OHIP Number:</td>
+                        <td id="ohip"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td id="phone"></td>
+                    </tr>
+                </table>
             </div>
         </section>
         <footer>

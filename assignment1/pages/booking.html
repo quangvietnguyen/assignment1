@@ -2,50 +2,70 @@
 <html>
     <head>
         <title>Vaccine Booking</title>
+        <link rel="stylesheet" href="../css/styles.css"/>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
-        <img src="images/" alt="Background images"/>
         <script>
             let date = new Date();
             date = date.toDateString();
             $(document).ready(() => {
                 $("#date").html(date);
-                $("#back").click( () => {
-                    
+                $("#submit").click(() => {
+                    localStorage.setItem("Date",bookingdate.value);
+                    localStorage.setItem("Time",time.value);
+                    localStorage.setItem("OHIP",ohip.value);
+                    localStorage.setItem("Email",email.value);
+                    localStorage.setItem("Phone",phone.value);
+                    $("#result").html("Submitted Successfully!")
                 })
             })
         </script>
     </head>
-    <body>
+    <body id="wrapper">
         <header>
             <h1>COVID-19 Vaccine Booking System</h1>
             <h4>Assignment #1 / Quang Viet Nguyen / 991590517</h4>
         </header>
         <section>
-            <div>
+            <div id="navigator">
                 <a href="../index.html">Main Page</a>
                 <a href="list.html">Vaccine List</a>
             </div>
-        </section>
-        <section>
             <div>
                 <h2>Vaccine Booking</h2>
             </div>
-            <div>
-                <form>
-                    <label for="bookingdate">Date:
-                    <input type="date" id="bookingdate" name="bookingdate" required/></label><br>
-                    <label for="time">Time:
-                    <input type="time" id="time" name="time" required/></label><br>
-                    <label for="ohip">OHIP Number:
-                    <input type="number" id="ohip" name="ohip" required/></label><br>
-                    <label for="email">Email:
-                    <input type="email" id="email" name="email"/></label><br>
-                    <label for="phone">Phone Number:
-                    <input type="number" id="phone" name="phone" required/></label><br>
-                    <button>Submit</button><br>
-                    <button id="back">Back</button>
+            <div id="result">
+                <form action="" method="POST">
+                    <table>
+                        <tr>
+                            <td><label for="bookingdate">Date:</label></td>
+                            <td><input type="date" id="bookingdate" name="bookingdate" required/><span>*</span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="time">Time:</label></td>
+                            <td><input type="time" id="time" name="time" required/><span>*</span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="ohip">OHIP Number:</label></td>
+                            <td><input type="number" id="ohip" name="ohip" required/><span>*</span></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">Phone Number:</label></td>
+                            <td><input type="number" id="phone" name="phone" required/><span>*</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button type="submit" id="submit" style="border-radius: 12%;">Submit</button></td>
+                        </tr>
+                    </table>    
                 </form>
+            </div>
+            <div>
+                <button id="return"><a href="../index.html">RETURN BACK</a></button>
             </div>
         </section>
         <footer>
