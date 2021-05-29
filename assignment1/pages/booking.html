@@ -11,12 +11,14 @@
             $(document).ready(() => {
                 $("#date").html(date);
                 $("#submit").click(() => {
-                    localStorage.setItem("Date",bookingdate.value);
-                    localStorage.setItem("Time",time.value);
-                    localStorage.setItem("OHIP",ohip.value);
-                    localStorage.setItem("Email",email.value);
-                    localStorage.setItem("Phone",phone.value);
-                    $("#result").html("Submitted Successfully!")
+                    if ((bookingdate.value != "") && (time.value != "") && (ohip.value != "") && (phone.value != "") && (phone.value.length = 10) && (ohip.value.length = 10)) {
+                        localStorage.setItem("Date",bookingdate.value);
+                        localStorage.setItem("Time",time.value);
+                        localStorage.setItem("OHIP",ohip.value);
+                        localStorage.setItem("Email",email.value);
+                        localStorage.setItem("Phone",phone.value);
+                        $("#result").html("Submitted Successfully!");
+                    }
                 })
             })
         </script>
@@ -24,12 +26,12 @@
     <body id="wrapper">
         <header>
             <h1>COVID-19 Vaccine Booking System</h1>
-            <h4>Assignment #1 / Quang Viet Nguyen / 991590517</h4>
+            <h4>Assignment #1 | Quang Viet Nguyen | 991590517</h4>
         </header>
         <section>
             <div id="navigator">
                 <a href="../index.html">Main Page</a>
-                <a href="list.html">Vaccine List</a>
+                <a href="list.html">Booking Listing</a>
             </div>
             <div>
                 <h2>Vaccine Booking</h2>
@@ -39,15 +41,15 @@
                     <table>
                         <tr>
                             <td><label for="bookingdate">Date:</label></td>
-                            <td><input type="date" id="bookingdate" name="bookingdate" required/><span>*</span></td>
+                            <td><input type="date" id="bookingdate" name="bookingdate" min="2021-06-01" max="2021-06-30" required/><span>*</span></td>
                         </tr>
                         <tr>
                             <td><label for="time">Time:</label></td>
-                            <td><input type="time" id="time" name="time" required/><span>*</span></td>
+                            <td><input type="time" id="time" name="time" min="09:00" max="18:00" required/><span>*</span></td>
                         </tr>
                         <tr>
                             <td><label for="ohip">OHIP Number:</label></td>
-                            <td><input type="number" id="ohip" name="ohip" required/><span>*</span></td>
+                            <td><input type="number" id="ohip" name="ohip" min="1000000000" maxlength="9999999999" required/><span>*</span></td>
                         </tr>
                         <tr>
                             <td><label for="email">Email:</label></td>
@@ -55,11 +57,11 @@
                         </tr>
                         <tr>
                             <td><label for="phone">Phone Number:</label></td>
-                            <td><input type="number" id="phone" name="phone" required/><span>*</span></td>
+                            <td><input type="number" id="phone" name="phone" min="1000000000" maxlength="9999999999" required/><span>*</span></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><button type="submit" id="submit" style="border-radius: 12%;">Submit</button></td>
+                            <td><button type="submit" id="submit" style="border-radius: 12%; background-color: green; color: whitesmoke">Submit</button></td>
                         </tr>
                     </table>    
                 </form>
@@ -69,7 +71,7 @@
             </div>
         </section>
         <footer>
-            <h5>nguyen374 / Davis Campus / <span id="date"></span></h4>
+            <h5>username: nguyen374 | Davis Campus | <span id="date"></span></h4>
         </footer>
     </body>
 </html>
