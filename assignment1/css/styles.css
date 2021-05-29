@@ -1,5 +1,4 @@
 html {
-    border: solid 0.01px;
     background-image: url(../images/vaccine.png);
     background-repeat: repeat;
 }
@@ -16,7 +15,6 @@ html {
 #wrapper {
     align-items: center;
     text-align: center;
-    width: 600px;
     margin:auto;
     padding:auto;
     font-family: Arial, Helvetica, sans-serif;
@@ -50,19 +48,17 @@ html {
 
 .grid-footer {
     grid-area: footer;
+    position: fixed;
+    width:100%;
     padding: 15px 15px 15px 15px;
     background-color: orange;
     margin: 1px;
+    bottom: 0;
 }
 
 body {
     background-color: rgba(255, 255, 255, 0.8);
     height: auto;
-}
-
-form {
-    text-align: left;
-    padding-left: 30%;
 }
 
 a {
