@@ -7,36 +7,39 @@
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
     </head>
-    <body>
-        <header>
+    <body id="wrapper" class="grid-container">
+        <header class="grid-header">
             <div>
                 <h1>COVID-19 Ontario Vaccine Data</h1>
             </div>
             <div>
-                <h3>Assignment #2 | Quang Viet, Nguyen | 991590517</h3>
+                <h4>Assignment #2 | Quang Viet, Nguyen | 991590517</h4>
             </div>
         </header>
-        <section id="button">
-            <div>
-                <button id="load">Load data</button>
-            </div>
-            <div>
-                <h3 id="result"></h3>
-            </div>
-            <div>
-                <button id="display">Display</button>
-            </div>
-            <div>
-                <ul id="list"></ul>
-            </div>
-        </section>
-        <section id="detail">
-            <h2>Vaccine Doses Detail Information</h2>
-            <div>
-                <h2 id="detailinfo"></h2>
-            </div>
-        </section>
-        <footer>
+            <section id="button">
+                <div id="loaddata">
+                    <button id="load">Load data</button>
+                    <hr>
+                    <h4 id="result"></h4>
+                    <hr>
+                </div>
+                <div id="displaydata">
+                    <button id="display">Display data</button>
+                    <hr>
+                    <h4 id="title"></h4>
+                    <div>
+                        <ul id="list"></ul>
+                    </div>
+                </div>
+            </section>
+            <section id="detail">
+                <h3>Vaccine Doses Detail Information</h3>
+                <hr>
+                <div>
+                    <h4 id="detailinfo"></h4>
+                </div>
+            </section>
+        <footer class="grid-footer">
             <div>
                 <h5>nguyen374 | Davis Campus | <span id="date"></span></h5>
             </div>
